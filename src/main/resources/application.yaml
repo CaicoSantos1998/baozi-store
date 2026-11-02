@@ -1,3 +1,13 @@
 spring:
   application:
     name: demobaozistore
+  datasource:
+    url: jdbc:mysql://localhost:${DB_PORT}/${DB_NAME}?createDatabaseIfNotExist=true
+    username: ${DB_USER}
+    password: ${DB_PASSWORD}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+      show-sql: true
+      open-in-view: true

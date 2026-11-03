@@ -1,5 +1,6 @@
 package com.github.caicosantos1998.demobaozistore.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -22,5 +23,6 @@ public class Product {
     private BigDecimal price;
     private Boolean storage;
     @OneToMany(mappedBy = "product")
+    @JsonIgnore
     private List<Order> orders;
 }

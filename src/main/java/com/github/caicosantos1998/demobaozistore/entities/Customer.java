@@ -1,5 +1,6 @@
 package com.github.caicosantos1998.demobaozistore.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -21,5 +22,6 @@ public class Customer {
     private String name;
     private LocalDate regisDate;
     @OneToMany(mappedBy = "customer")
+    @JsonIgnore
     private List<Order> orders;
 }
